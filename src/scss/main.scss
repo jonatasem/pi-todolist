@@ -120,3 +120,43 @@ body {
     }
   }
 }
+
+
+@media (max-width:499px) {
+  .app-container {
+    border-radius: 0;
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .todo-list-container {
+    .add-todo-form {
+      input {
+        font-size: 14px;
+        padding: 0 0 0 0.5rem;
+      }
+    }
+
+    .todo-items {
+      .todo-item {
+        span {
+          font-size: 14px;
+        }
+
+        .todo-actions {
+          display: flex;
+          flex-direction: column;
+
+          button {
+            padding: 0.2rem;
+            font-size: 12px;
+            width: 100%;
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
