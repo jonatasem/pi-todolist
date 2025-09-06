@@ -35,11 +35,17 @@ const TodoItem = ({ todo }) => {
           <button onClick={() => toggleTodo(todo.id)}>Concluir</button>
         )}
         {isEditing ? (
-          <button onClick={handleSaveEdit} className="btn-save">Salvar</button>
+          <button onClick={handleSaveEdit} className="btn-save">
+            Salvar
+          </button>
         ) : (
-          <button onClick={() => setIsEditing(true)} className="btn-edit">Editar</button>
+          <button onClick={() => setIsEditing(true)} className="btn-edit">
+            Editar
+          </button>
         )}
-        <button onClick={() => deleteTodo(todo.id)} className="btn-delete">Excluir</button>
+        <button onClick={() => deleteTodo(todo.id)} className="btn-delete">
+          Excluir
+        </button>
       </div>
     </li>
   );
