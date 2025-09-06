@@ -160,3 +160,14 @@ body {
     }
   }
 }
+
+@media (max-width:360px) {
+  .todo-list-container {
+    .add-todo-form {
+      justify-content: space-between;
+      input {
+        max-width: 160px;
+      }
+    }
+  }
+}
