@@ -6,7 +6,7 @@ Este é um projeto de lista de tarefas (Todo List) desenvolvido como parte de um
 ## Tecnologias Utilizadas
 - React
 - Context API
-- CSS
+- SCSS
 - JavaScript
 - Local Storage
 
