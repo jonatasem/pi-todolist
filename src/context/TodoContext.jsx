@@ -1,5 +1,9 @@
-import { createContext, useContext, useState, useMemo, useEffect } from "react";
-
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const TodoContext = createContext();
@@ -14,11 +18,31 @@ export const TodoProvider = ({ children }) => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const addTodo = (text) => {
-    setTodos((prevTodos) => [
-      ...prevTodos,
-      { id: uuidv4(), text, status: "pendente" },
-    ]);
+  const addTodo = (text, date, time, location, importance) => {
+    const newTodo = {
+      id: uuidv4(),
+      text,
+      date,
+      time,
+      location,
+      importance,
+      status: "pendente",
+    };
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
+
+    if ("Notification" in window && Notification.permission === "granted" && date && time) {
+      const todoDate = new Date(`${date}T${time}`);
+      const now = new Date();
+      const delay = todoDate.getTime() - now.getTime();
+
+      if (delay > 0) {
+        setTimeout(() => {
+          new Notification("Lembrete de Tarefa!", {
+            body: `Sua tarefa "${text}" está agendada para agora. Local: ${location}.`,
+          });
+        }, delay);
+      }
+    }
   };
 
   const deleteTodo = (id) => {
@@ -41,16 +65,13 @@ export const TodoProvider = ({ children }) => {
     );
   };
 
-  const value = useMemo(
-    () => ({
-      todos,
-      addTodo,
-      deleteTodo,
-      toggleTodo,
-      editTodo,
-    }),
-    [todos],
-  );
+  const value = {
+    todos,
+    addTodo,
+    deleteTodo,
+    toggleTodo,
+    editTodo,
+  };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };

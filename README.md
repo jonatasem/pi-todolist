@@ -1,12 +1,42 @@
-# React + Vite
+# Pi Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+Este é um projeto de lista de tarefas (Todo List) desenvolvido como parte de um trabalho de faculdade. A aplicação permite que os usuários adicionem, editem, excluam e visualizem suas tarefas, além de configurar lembretes com notificações.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+- React
+- Context API
+- CSS
+- JavaScript
+- Local Storage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+- Adição de novas tarefas com data, hora, local e importância.
+- Edição e exclusão de tarefas.
+- Exibição de uma lista de tarefas com detalhes.
+- Notificações para lembretes de tarefas.
 
-## Expanding the ESLint configuration
+## Como Usar
+1. Clone o repositório:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   git clone https://github.com/jonatasem/pi-todolist.git
+   
+2. Navegue até o diretório do projeto:
+
+   cd pi-todolist
+   
+3. Instale as dependências:
+
+   npm install
+   
+4. Inicie a aplicação:
+
+   npm run dev
+   
+5. Acesse a aplicação no seu navegador em `http://localhost:5173`.
+
+## Contribuições
+Contribuições são bem-vindas! Se você tiver sugestões ou melhorias, fique à vontade para abrir um issue ou enviar um pull request.
+
+## Licença
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.

@@ -13,10 +13,10 @@ const TodoItem = ({ todo }) => {
     }
   };
 
+  const importanceClass = `priority-${todo.importance}`;
+
   return (
-    <li
-      className={`todo-item ${todo.status === "concluído" ? "completed" : ""}`}
-    >
+    <li className={`todo-item ${todo.status === "concluído" ? "completed" : ""} ${importanceClass}`}>
       {isEditing ? (
         <input
           type="text"
@@ -27,7 +27,13 @@ const TodoItem = ({ todo }) => {
           autoFocus
         />
       ) : (
-        <span>{todo.text}</span>
+        <div className="todo-details">
+          <span>{todo.text}</span>
+          <p>Data: {todo.date || "N/A"}</p>
+          <p>Horário: {todo.time || "N/A"}</p>
+          <p>Local: {todo.location || "N/A"}</p>
+          <p>Importância: {todo.importance || "N/A"}</p>
+        </div>
       )}
 
       <div className="todo-actions">
@@ -52,3 +58,4 @@ const TodoItem = ({ todo }) => {
 };
 
 export default TodoItem;
+
