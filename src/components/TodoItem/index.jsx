@@ -29,16 +29,16 @@ const TodoItem = ({ todo }) => {
       ) : (
         <div className="todo-details">
           <span>{todo.text}</span>
-          <p>Data: {todo.date || "N/A"}</p>
-          <p>Horário: {todo.time || "N/A"}</p>
-          <p>Local: {todo.location || "N/A"}</p>
-          <p>Importância: {todo.importance || "N/A"}</p>
+          <p>Data: {todo.date}</p>
+          <p>Horário: {todo.time}</p>
+          <p>Local: {todo.location}</p>
+          <p>Importância: {todo.importance}</p>
         </div>
       )}
 
       <div className="todo-actions">
         {todo.status !== "concluído" && (
-          <button onClick={() => toggleTodo(todo.id)}>Concluir</button>
+          <button className="btn-conclusion" onClick={() => toggleTodo(todo.id)}>Concluir</button>
         )}
         {isEditing ? (
           <button onClick={handleSaveEdit} className="btn-save">
